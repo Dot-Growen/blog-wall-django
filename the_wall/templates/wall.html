@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+   
+
+    <script src="{% static 'js/script.js' %}"></script> <!-- CHANGE JS FILE LOCATION -->
+
+    <title> Document </title>
+</head>
+
+<body class="wall_body">
+
+    <!-- HEADER SECTION -->
+
+    <div class="header_sec">
+        <h1>Supreme Wall of life</h1>
+        <p> Welcome You</p>
+        <a>Log tf Out</a>
+    </div>
+
+    <hr class="header_line">
+    <!-- POST MESSAGE SECTION -->
+
+    <div class="post_sec">
+        <h4>Post a message</h4>
+        <form>
+            {% csrf_token %}
+            <textarea class="form-control">
+
+        </textarea>
+            <button class="post_btn btn btn-outline-primary">Post a message</button>
+        </form>
+    </div>
+
+    <!-- MESSAGE SECTION -->
+
+    <div class="message_sec">
+        FOR LOOP1
+        <div>
+            <h4></h4>
+            <p></p>
+        </div>
+        <!-- SUB COMMENTS -->
+        FOR LOOP2
+        <div class="comment_sec">
+            <h5></h5>
+            <p></p>
+        </div>
+        END LOOP2
+        <!-- POST COMMENTS -->
+        <div class="post_comment_sec">
+            <h4></h4>
+
+            <form>
+                {% csrf_token %}
+                <textarea  class="form-control">
+
+            </textarea>
+                <button></button>
+            </form>
+        </div>
+        END LOOP1
+    </div>
+
+</body>
+
+</html>
