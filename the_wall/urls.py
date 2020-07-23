@@ -9,4 +9,5 @@ urlpatterns = [
     path('logout', views.logout),
     path('comment', views.comment),
     path('message', views.message),
+    path('delete/<int:id>/<int:typeid>/<str:label>', views.delete),
 ]
