@@ -16,7 +16,7 @@
 }
 
 .sections {
-    margin: 1em 1em 5em 2em;
+  
     color: white;
     border: .1em #7fc1ff31 solid;
     -webkit-box-shadow: 13px 13px 7px -9px rgba(0, 0, 0, 0.75);
@@ -25,7 +25,7 @@
 }
 
 .sections2 {
-    margin: 5em 2em 5em 1em;
+    margin-top: 1em;
     color: white;
     border: .1em #7fc1ff31 solid;
     -webkit-box-shadow: 13px 13px 7px -9px rgba(0, 0, 0, 0.75);
@@ -98,6 +98,7 @@ h3 {
 
 .post_comment_sec input[type=text] {
     background-color: #585858;
+    color: white;
     border: #72727200 1px solid;
 }
 
