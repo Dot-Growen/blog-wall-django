@@ -17,16 +17,14 @@
     <!-- HEADER SECTION -->
 
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
-        <div class="container">
-            <a class="navbar-brand" href="/dashboard">
+            <a class="navbar-brand ml-5" href="/dashboard">
                 <h2 class="text-white">The Great Gossip Wall</h2>
             </a>
-            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse mr-5">
                 <ul class="headNew navbar-nav align-items-center">
-                        <a class=" btn btn-light logoutbtn " href="/Logout">Logout</a>
+                    <a class=" btn btn-light logoutbtn " href="/logout">Logout</a>
                 </ul>
             </div>
-        </div>
     </nav>
 
     <!-- <div class="header_sec">
@@ -41,7 +39,8 @@
             <form action="/message" method="POST">
                 {% csrf_token %}
                 <input type="text" placeholder="Post a message" name="message_form" class="post_area form-control">
-                <button type="submit" class="post_btn btn btn-block btn-light" name="which_form" value={{user.id}}>Post a message</button>
+                <button type="submit" class="post_btn btn btn-block btn-light" name="which_form" value={{user.id}}>Post
+                    a message</button>
             </form>
         </div>
 
@@ -58,9 +57,9 @@
                     </h6>
                     <small>{{msg.created_at}}</small>
                     <p>{{msg.message}}</p>
+                    {%for cmt in cmt%}
+                    {% if cmt.message.id == msg.id%}
                     <div class="comment_sec">
-                        {%for cmt in cmt%}
-                        {% if cmt.message.id == msg.id%}
                         <h6 class="mb-0">{{cmt.user.first_name}} {{cmt.user.last_name}}
                             <a href="/delete/{{cmt.id}}/{{cmt.user.id}}/cmt" class="delete float-right ">Delete
                                 comment
@@ -68,12 +67,11 @@
                         </h6>
                         <small>{{cmt.created_at}}</small>
                         <p class="cmt">{{cmt.comment}}</p>
-                        {%endif%}
-                        {%endfor%}
                     </div>
+                    {%endif%}
+                    {%endfor%}
                     <div class="post_comment_sec">
                         <h4>Post a comment</h4>
-
                         <form action="/comment" method="POST">
                             {% csrf_token %}
                             <input type="text" name="comment_form" class="post_area form-control"></input>
